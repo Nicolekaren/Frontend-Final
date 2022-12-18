@@ -17,11 +17,11 @@ const App = () => {
       <Routes>
         <Route path="/" element={<HomePageContainer/>} />
         <Route path="/employees" element={<AllEmployeesContainer/>} />
-        <Route path="/employee/:id" element={<EmployeeContainer/>} />
+        <Route path="/employee/:id" element={<EmployeeContainer/>} /> 
         <Route path="/tasks" element={<AllTasksContainer/>} />
         <Route path="/newtask" element={<NewTaskContainer/>} />
-        <Route path="/task/:id" element={<TaskContainer/>} />
-        <Route path="/edittask/:id" element={<EditTaskContainer/>} />
+        <Route path="/task/:id" element={<TaskContainer/>} />  
+        <Route path="/edittask/:id" element={<EditTaskContainer/>} /> 
 
       </Routes>        
     </div>

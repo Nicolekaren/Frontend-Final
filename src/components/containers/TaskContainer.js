@@ -2,10 +2,20 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchTaskThunk } from "../../store/thunks";
 import { TaskView } from "../views";
+import { useParams } from "react-router";
+
+const withRouter = (MyComponent) => (props) => {
+    const params = useParams();
+    return (
+      <MyComponent
+        {...props}
+        params={params}/>
+    );
+  };
 
 class TaskContainer extends Component {
   componentDidMount() {
-    this.props.fetchTask(this.props.id);
+    this.props.fetchTask(this.props.params.id);
   }
 
   render() {
@@ -23,4 +33,4 @@ const mapDispatch = (dispatch) => {
   };
 };
 
-export default connect(mapState, mapDispatch)(TaskContainer);
+export default withRouter(connect(mapState, mapDispatch)(TaskContainer));
