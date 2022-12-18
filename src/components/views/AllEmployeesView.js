@@ -10,9 +10,7 @@ const AllEmployeesView = (props) => {
       </div>
     );
   }
-
-  return (
-
+    return (
     <div>
         <Link to={'/'}> 
         <button> Home Page </button>
@@ -31,6 +29,7 @@ const AllEmployeesView = (props) => {
         );
       })}
       </div>
+      <button>Delete Employees</button>
     </div>
   );
 };
