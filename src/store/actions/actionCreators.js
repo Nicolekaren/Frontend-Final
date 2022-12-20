@@ -6,6 +6,13 @@ export const fetchAllEmployees = (employees) => {
   };
 };
 
+export const addEmployee = (employee) => {
+  return {
+    type: at.ADD_EMPLOYEE,
+    payload: employee,
+  };
+};
+
 export const fetchEmployee = (employee) => {
   return {
     type: at.FETCH_EMPLOYEE,
