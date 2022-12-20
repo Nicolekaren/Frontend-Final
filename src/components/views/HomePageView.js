@@ -1,16 +1,20 @@
 import { Link } from 'react-router-dom';
+import './views.css';
 
 const HomePageView = () => {
+
   return (
     <div>
-      <h6 className="text-center text-3xl mt-20 text-base leading-8 text-black font-bold tracking-wide uppercase">Employee Management System</h6>
+      <h6 className="myStyle">Employee Management System</h6>
 
-      <div>
-      <Link to={'/employees'} > All Employees </Link>
+      <div className="parent'">
+      <div className="child">
+      <Link to={'/employees'} > <button className="stlbut">All Employees </button></Link>
       </div>
 
-      <div>
-      <Link to={'/tasks'} > All Tasks </Link>
+      <div className='child'>
+      <Link to={'/tasks'} > <button className="stlbut">All Tasks </button></Link>
+      </div>
       </div>
       
     </div>

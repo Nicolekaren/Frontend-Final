@@ -6,7 +6,7 @@ const TaskView = (props) => {
     <div>
       <h1>{task.description}</h1>
       {task.employee ? (
-        <h3>{task.employee.firstname + " " + task.employee.lastname}</h3>
+      <Link to={`/employee/${task.employee.id}`}> <h3>{task.employee.firstname + " " + task.employee.lastname}</h3></Link>
       ) : (
         <h3>Unassigned</h3>
       )}
