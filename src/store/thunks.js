@@ -20,6 +20,15 @@ export const fetchEmployeeThunk = (id) => async (dispatch) => {
     console.error(err);
   }
 };
+
+export const deleteEmployeeThunk = (employeeId) => async (dispatch) => {
+  try {
+    await axios.delete(`${path}/employees/${employeeId}`);
+    dispatch(ac.deleteEmployee(employeeId));
+  } catch (err) {
+    console.error(err);
+  }
+};
 export const fetchAllTasksThunk = () => async (dispatch) => {
   try {
     let res = await axios.get(`${path}/tasks`);

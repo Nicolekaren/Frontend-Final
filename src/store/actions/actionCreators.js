@@ -13,6 +13,14 @@ export const fetchEmployee = (employee) => {
   };
 };
 
+export const deleteEmployee = (employeeId) => {
+  return {
+    type: at.DELETE_EMPLOYEE,
+    payload: employeeId,
+  };
+};
+
+
 export const fetchAllTasks = (tasks) => {
   return {
     type: at.FETCH_ALL_TASKS,
