@@ -6,10 +6,11 @@ import {
   editTaskThunk,
 } from "../../store/thunks";
 
-import { useParams } from "react-router";
 import { EmployeeView } from "../views";
+import { useParams } from "react-router";
+import { Link } from "react-router-dom";
 
-const withRouter = MyComponent => (props) => {
+const withRouter = (MyComponent) => (props) => {
   const params = useParams();
   return (
     <MyComponent
@@ -20,7 +21,7 @@ const withRouter = MyComponent => (props) => {
 
 class EmployeeContainer extends Component {
   componentDidMount() {
-    this.props.fetchEmployee(this.props.id);
+    this.props.fetchEmployee(this.props.params.id);
     this.props.fetchTasks();
   }
 
