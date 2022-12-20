@@ -27,7 +27,7 @@ const AllEmployeesView = (props) => {
 
             <p>{employee.department}</p>
 
-            <button onClick={() => deleteEmployee(employee.id)}>Delete</button>
+            <button onClick={() => deleteEmployee(employee.id)}>X</button>
           </div>
         );
       })}

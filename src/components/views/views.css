@@ -1,0 +1,29 @@
+.myStyle{
+    color: black;
+    background-color: lightblue;
+    padding: 10px;
+    font-size: 50px;
+  }
+
+  .parent{
+      margin: 1px;
+      padding: 2px;
+      text-align: center;
+  }
+
+  .child{
+    display: inline-block;
+    border: 15px;
+    padding: 20px;
+    vertical-align: middle;
+  }
+
+  .stlbut{
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10;
+  cursor: pointer;
+  }
