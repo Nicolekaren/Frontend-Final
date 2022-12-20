@@ -32,6 +32,9 @@ const AllEmployeesView = (props) => {
         );
       })}
       </div>
+      <Link to={`/newemployee`}>
+        <button>Add New Employee</button>
+      </Link>
 
     </div>
   );
