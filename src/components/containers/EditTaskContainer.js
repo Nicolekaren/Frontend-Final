@@ -46,11 +46,7 @@ class EditTaskContainer extends Component {
   };
 
   handleSelectChange = event => {
-    //handle change for the dropdown menu
-    //want to set the employeeId based on the selected choice
-    //when the form gets submitted, this is how we can change
-    //assigned employee without having to manually enter in the 
-    //employeeId like before
+ 
     if (event.target.value === "staff") {
       this.setState({employeeId:null});
     } else {
@@ -60,7 +56,7 @@ class EditTaskContainer extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    //implementing form validation
+   
     if (this.state.description === "") {
       this.setState({error: "Error: description cannot be empty"});
       return;
@@ -107,8 +103,8 @@ class EditTaskContainer extends Component {
         style={{ textAlign: "center" }}
         onSubmit={(e) => this.handleSubmit(e)}
       >
-        <label style={{ color: "#11153e", fontWeight: "bold" }}>
-          Description:{" "}
+        <label style={{ color: "#11153e", fontWeight: "bold"}}>
+          Description:  {" "}
         </label>
         <input
           type="text"
@@ -116,6 +112,7 @@ class EditTaskContainer extends Component {
           value={this.state.description || '' }
           placeholder={task.description}
           onChange={(e) => this.handleChange(e)}
+          style={{"margin": "10px"}}
         />
         <br />
 
@@ -128,6 +125,7 @@ class EditTaskContainer extends Component {
           value={this.state.prioritylevel || ''}
           placeholder={task.timeslot}
           onChange={(e) => this.handleChange(e)}
+          style={{"margin": "10px"}}
         />
         <br />
 
@@ -139,9 +137,11 @@ class EditTaskContainer extends Component {
           name="completionstatus"
           value={this.state.completionstatus}
           onChange={(e) => this.handleChange(e)}
+          style={{"margin": "10px"}}
         />
         <br />
-        <select onChange={(e) => this.handleSelectChange(e)}>
+        Other employees: 
+        <select style={{"margin": "10px"}} onChange={(e) => this.handleSelectChange(e)}>
               {task.employee!==null ?
                 <option value={task.employeeId}>{task.employee.firstname+" (current)"}</option>
               : <option value="staff">Staff</option>
@@ -154,7 +154,7 @@ class EditTaskContainer extends Component {
               {task.employee!==null && <option value="staff">Staff</option>}
             </select>
 
-        <button type="submit">Submit</button>
+        <button className="stlbut2" style={{"padding": "3px"}} type="submit">Submit</button>
       </form>
           {this.state.error !=="" && <p>{this.state.error}</p> }
 
@@ -164,19 +164,6 @@ class EditTaskContainer extends Component {
       </div>
   : <div> No employee currently assigned </div>
 }
-
-<div> Other employees
-{otherEmployees.map(employee => {
-  return (
-  <div key={employee.id}>
-      <Link to={`/employee/${employee.id}`}>
-        <h4>{employee.firstname}</h4>
-      </Link>
-      <button onClick={async() => {await editTask({id:task.id, employeeId: employee.id}); fetchTask(task.id)}}>Assign this employee</button>
-  </div>
-  )})
-}
-</div>
 
 
       </div>

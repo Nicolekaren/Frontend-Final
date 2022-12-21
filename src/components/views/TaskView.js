@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const TaskView = (props) => {
-  const { task } = props;
+  const { task, deleteTask } = props;
   return (
     <div>
       <h1>{task.description}</h1>
@@ -12,9 +12,15 @@ const TaskView = (props) => {
       ) : (
         <h3>Unassigned</h3>
       )}
+
       <Link to={`/edittask/${task.id}`}>Edit task information</Link>
-      <br />
+      <br></br>
+      <br></br>
+      
       <Link to={`/tasks`}>View all tasks</Link>
+      <br></br>
+      <br></br>
+      <button className="stlbut2" onClick={() => deleteTask(task.id)}>Delete Task</button>
     </div>
   );
 };

@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 
+
 const EmployeeView = (props) => {
-  const { employee, editTask, allTasks } = props;
+  const { employee, editTask, allTasks, deleteEmployee } = props;
   let assignedTasks = allTasks.filter(
     (task) => task.employeeId === employee.id
   );
@@ -25,6 +26,7 @@ const EmployeeView = (props) => {
                   <h4>{task.description}</h4>
                 </Link>
                 <button
+                className="stlbut2"
                   onClick={() =>
                     editTask({ id: task.id, employeeId: employee.id })
                   }
@@ -35,9 +37,11 @@ const EmployeeView = (props) => {
             );
           })}
         </div>
-
-        <Link to={"/"}> <button>Home Page</button></Link>
-        <Link to={'/employees'}> <button> All Employees </button></Link>
+         
+        <br></br>
+        <button className="stlbut2" onClick={() => deleteEmployee(employee.id)}>Delete Employee</button> 
+        <Link to={"/"}> <button className="stlbut2">Home Page</button></Link>
+        <Link to={'/employees'}> <button className="stlbut2"> All Employees </button></Link>
       </div>
       
     );
@@ -80,7 +84,7 @@ const EmployeeView = (props) => {
                 <Link to={`/task/${task.id}`}>
                   <h4>{task.description}</h4>
                 </Link>
-                <button
+                <button className="stlbut2"
                   onClick={() =>
                     editTask({ id: task.id, employeeId: employee.id })
                   }
@@ -92,9 +96,10 @@ const EmployeeView = (props) => {
           })}
         </div>
       </div>
-        
-      <Link to={"/"}> <button>Home Page</button></Link>
-      <Link to={'/employees'}> <button> All Employees </button></Link>
+      <br></br>
+       <button className="stlbut2" onClick={() => deleteEmployee(employee.id)}>Delete Employee</button> 
+      <Link to={"/"}> <button className="stlbut2">Home Page</button></Link>
+      <Link to={'/employees'}> <button className="stlbut2"> All Employees </button></Link>
 
     </div>
   );
