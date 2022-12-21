@@ -9,6 +9,41 @@ const EmployeeView = (props) => {
     (task) => task.employeeId !== employee.id
   );
 
+  if (assignedTasks==0) {
+    return (
+      <div>
+         <h1>{employee.firstname}</h1>
+         <h3>{employee.department}</h3>
+        <p>There are no tasks assigned for this employee</p>
+
+        <div>
+          Available tasks:
+          {availableTasks.map((task) => {
+            return (
+              <div key={task.id}>
+                <Link to={`/task/${task.id}`}>
+                  <h4>{task.description}</h4>
+                </Link>
+                <button
+                  onClick={() =>
+                    editTask({ id: task.id, employeeId: employee.id })
+                  }
+                >
+                  +
+                </button>
+              </div>
+            );
+          })}
+        </div>
+
+        <Link to={"/"}> <button>Home Page</button></Link>
+        <Link to={'/employees'}> <button> All Employees </button></Link>
+      </div>
+      
+    );
+  }
+
+
   return (
     <div>
       <h1>{employee.firstname}</h1>
@@ -57,6 +92,10 @@ const EmployeeView = (props) => {
           })}
         </div>
       </div>
+        
+      <Link to={"/"}> <button>Home Page</button></Link>
+      <Link to={'/employees'}> <button> All Employees </button></Link>
+
     </div>
   );
 };

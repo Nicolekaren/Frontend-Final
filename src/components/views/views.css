@@ -1,47 +1,28 @@
 .myStyle{
-    color: black;
-    background-color: lightblue;
-    padding: 10px;
-    font-size: 50px;
-  }
-
-  .parent{
-      margin: 1px;
-      padding: 2px;
-      text-align: center;
-  }
-
-  .child{
-    display: inline-block;
-    border: 15px;
-    padding: 20px;
-    vertical-align: middle;
-  }
-
-  .stlbut{
-  background-color: black;
-  color: white;
-  font-size: 20px;
+  color: black;
+  background-color: lightblue;
   padding: 10px;
-  border-radius: 5px;
-  margin: 10;
-  cursor: pointer;
-  }
+  font-size: 50px;
+}
 
-  .stlbut2{
-    background-color: black;
-    color: white;
-    font-size: 15px;
-    padding: 5px;
-    border-radius: 5px;
-    margin: 10;
-    cursor: pointer;
-    }
-  
+.parent{
+    margin: 1px;
+    padding: 2px;
+    text-align: center;
+}
 
-.linkStyle {
-    margin: 2rem;
-    text-decoration: none;
-    color: 'navy';
-    cursor: pointer;
-  }
+.child{
+  display: inline-block;
+  border: 15px;
+  padding: 20px;
+  vertical-align: middle;
+}
+
+.stlbut{
+background-color: black;
+color: white;
+font-size: 20px;
+padding: 10px;
+border-radius: 5px;
+margin: 10;
+cursor: pointer;}

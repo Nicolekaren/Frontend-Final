@@ -65,6 +65,11 @@ class EditTaskContainer extends Component {
       this.setState({error: "Error: description cannot be empty"});
       return;
     }
+   
+    let statusBool
+    if (this.state.completionstatus === "true") 
+      {statusBool = true} 
+    else { statusBool = false}
 
     let task = {
       id: this.props.task.id,
@@ -156,7 +161,6 @@ class EditTaskContainer extends Component {
           {task.employeeId !== null ?
       <div> Current employee:  
           <Link to={`/employee/${task.employeeId}`}>{task.employee.firstname}</Link>
-          <button onClick={async () => {await editTask({id:task.id, employeeId: null});  fetchTask(task.id)}}>Unassign</button>
       </div>
   : <div> No employee currently assigned </div>
 }
