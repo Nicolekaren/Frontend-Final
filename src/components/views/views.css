@@ -27,3 +27,21 @@
   margin: 10;
   cursor: pointer;
   }
+
+  .stlbut2{
+    background-color: black;
+    color: white;
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 10;
+    cursor: pointer;
+    }
+  
+
+.linkStyle {
+    margin: 2rem;
+    text-decoration: none;
+    color: 'navy';
+    cursor: pointer;
+  }
