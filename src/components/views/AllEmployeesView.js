@@ -14,26 +14,26 @@ const AllEmployeesView = (props) => {
     return (
     <div>
         <Link to={'/'}> 
-        <button> Home Page </button>
+        <button className="stlbut2" style={{"margin": 10}}> Home Page </button>
         </Link>
         <div>
       {props.allEmployees.map((employee) => {
         let name = employee.firstname + " " + employee.lastname;
         return (
-          <div key={employee.id}>
+          <div key={employee.id} style={{"margin": "35px"}}>
             <Link to={`/employee/${employee.id}`}>
-              <h1>{name}</h1>
+              <h1 style={{"marginBottom": "8px"}}>{name}</h1>
             </Link>
 
-            <p>{employee.department}</p>
+            <p className="dpt">{employee.department}</p>
 
-            <button onClick={() => deleteEmployee(employee.id)}>X</button>
+            <button onClick={() => deleteEmployee(employee.id)} className="stlbut2">X</button>
           </div>
         );
       })}
       </div>
       <Link to={`/newemployee`}>
-        <button>Add New Employee</button>
+        <button className="stlbut2" style={{"margin":20}}>Add New Employee</button>
       </Link>
 
     </div>

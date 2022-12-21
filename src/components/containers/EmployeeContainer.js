@@ -4,6 +4,7 @@ import {
   fetchEmployeeThunk,
   fetchAllTasksThunk,
   editTaskThunk,
+  deleteEmployeeThunk
 } from "../../store/thunks";
 
 import { EmployeeView } from "../views";
@@ -31,6 +32,7 @@ class EmployeeContainer extends Component {
         employee={this.props.employee}
         editTask={this.props.editTask}
         allTasks={this.props.allTasks}
+        deleteEmployee={this.props.deleteEmployee}
       />
     );
   }
@@ -47,6 +49,7 @@ const mapDispatch = (dispatch) => {
     fetchEmployee: (id) => dispatch(fetchEmployeeThunk(id)),
     editTask: (task) => dispatch(editTaskThunk(task)),
     fetchTasks: () => dispatch(fetchAllTasksThunk()),
+    deleteEmployee: (employeeId) => dispatch(deleteEmployeeThunk(employeeId)),
   };
 };
 

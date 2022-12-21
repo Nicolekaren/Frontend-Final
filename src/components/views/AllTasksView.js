@@ -7,7 +7,7 @@ const AllTasksView = (props) => {
       <div>
         <p>There are no tasks.</p>
         <Link to={`/newtask`}>
-          <button>Add New Task</button>
+          <button className="stlbut2">Add New Task</button>
         </Link>
       </div>
     );
@@ -22,15 +22,16 @@ const AllTasksView = (props) => {
             <Link to={`/task/${task.id}`}>
               <h1>{description}</h1>
             </Link>
-            <button onClick={() => deleteTask(task.id)}>X</button>
+            <button className="stlbut2" onClick={() => deleteTask(task.id)}>X</button>
           </div>
         );
       })}
+      <br></br>
       <Link to={`/newtask`}>
-        <button>Add New Task</button>
+        <button className="stlbut2">Add New Task</button>
       </Link>
       <Link to={"/"}>
-        <button>Home Page</button>
+        <button className="stlbut2">Home Page</button>
       </Link>
     </div>
   );
