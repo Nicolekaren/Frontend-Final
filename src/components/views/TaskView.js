@@ -5,9 +5,9 @@ const TaskView = (props) => {
   return (
     <div>
       <h1>{task.description}</h1>
-      <h2>Priority: {task.prioritylevel}</h2>
+      <h2>Priority: {task.prioritylevel=="" ? "TBD": task.prioritylevel}</h2>
       <h2>Completion Status: {task.completionstatus ? "Done": "Not Done"}</h2>
-      {task.employee ? (
+      {task.employee ? ( 
       <Link to={`/employee/${task.employee.id}`}> <h3>{task.employee.firstname + " " + task.employee.lastname}</h3></Link>
       ) : (
         <h3>Unassigned</h3>
